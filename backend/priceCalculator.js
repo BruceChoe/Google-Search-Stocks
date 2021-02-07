@@ -1,4 +1,6 @@
 class PriceCalculator {
+  constructor(props) {}
+
   calculate(term) {
     return 50.
   }
@@ -20,12 +22,15 @@ class DirectPriceCalculator {
         this.searchTerm = searchTerm;
         this.volume = webMasterAPI(searchTerm, currentDate - 1, currentDate);
     }
+  
+    calculate(term) {
+      return 50.
+    }
 
     get volume() {
         //return webMasterAPI(this.searchTerm,
     }
-
-    
-
-   
 }
+
+exports.PriceCalculator = PriceCalculator
+exports.DirectPriceCalculator = DirectPriceCalculator
