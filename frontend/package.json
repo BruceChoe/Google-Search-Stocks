@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "chart.js": "^2.9.4",
-    "react-chartjs-2": "^2.11.1"
-  }
-}
