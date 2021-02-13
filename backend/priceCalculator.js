@@ -1,35 +1,41 @@
 class PriceCalculator {
-  constructor(props) {}
-
-  calculate(term) {
-    return 50.
-  }
+    constructor(searchTerm) {
+        this.currentDate = new Date();
+        this.searchTerm = searchTerm;
+        this.volume = webMasterAPI(searchTerm, currentDate - 1, currentDate); //get volume data from yesterday to today
+    }
 }
-
-// TODO @Bruce: Create a "DirectPriceCalculator" that calculates the price of a term based on only that term's
-// popularity, not on other terms related to it.
-//test push
-
-const x = 1;
-myDate = new Date();
-console.log(myDate);
-myDate.setDate(myDate.getDate() - 1);
-console.log(myDate);
 
 class DirectPriceCalculator {
     constructor(searchTerm) {
         this.currentDate = new Date();
         this.searchTerm = searchTerm;
-        this.volume = webMasterAPI(searchTerm, currentDate - 1, currentDate);
+        this.volume = webMasterAPI(searchTerm, currentDate - 1, currentDate); //get volume data from yesterday to today, TODO: API PLACEHOLDER
     }
   
-    calculate(term) {
-      return 50.
+    calculatePrice(searchTerm) {
+        return volume; 
+    }
+
+    // Accessors, Getters
+    get currentDate() {
+        return currentDate;
+    }
+
+    get searchTerm() {
+        return searchTerm;
     }
 
     get volume() {
-        //return webMasterAPI(this.searchTerm,
+        return webMasterAPI(searchTerm, currentDate - 1, currentDate);
     }
+
+    // Mutators, Setters
+    set currentDate(date) {
+        this.currentDate = date;
+    }
+
+    
 }
 
 exports.PriceCalculator = PriceCalculator
