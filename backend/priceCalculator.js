@@ -18,14 +18,12 @@ class PriceCalculator {
      * Output: Boolean True/False 
     */
     canPurchase(searchTerm, amount) {
-        //Check if a buy order is executable 
         if (this.calculateCurrentPrice(searchTerm) * amount < (10/*TODO: USER MONEY VARIABLE*/)) {
             return true;
         } else {
             return false;
         }
     }
-
     
 }
 
@@ -43,7 +41,6 @@ class DirectPriceCalculator {
      * Calculates price by taking volume over the last 24 hours
     */
     currentPrice(searchTerm) {
-        //Price of a search term is the volume over the last 24 hours
         var yesterday = new Date(Date.now() - 86400 * 1000).toISOString();
         var today = Date.now().toISOString();
         return volume = webMasterAPI(searchTerm, yesterday, today); 
