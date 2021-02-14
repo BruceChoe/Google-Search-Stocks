@@ -2,7 +2,7 @@
  * Users Class File
 */
 
-class user {
+class User {
     constructor(inventory, transactionHistory, market) { //dependency injection
         this.inventory = inventory;
         this.transactionHistory = transactionHistory;
@@ -10,10 +10,12 @@ class user {
     }
 
     buy(searchTerm, amount) {
-        //TODO
+        this.market(searchTerm, amount, this.inventory);
     }
 
     sell(searchTerm, amount) {
-        //TODO
+        this.market(searchTerm, amount, this.inventory);
     }
+
+
 }

@@ -8,10 +8,14 @@ class Market {
     }
 
     buy(searchTerm, amount, inventory) {
-        //TODO
+        if (searchTerm.priceCalculator.currentPrice * amount < 10/*TODO: Compare with users amount of money*/) {
+            // execute order
+        } else {
+            // Don't execute order
+        }
     }
 
     sell(searchTerm, amount, inventory) {
-        //TODO
+        if (this.inventory.)
     }
 }
