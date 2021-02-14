@@ -11,14 +11,22 @@ class PriceCalculator {
 
     }
 
+    /*
+     * canPurchase(searchTerm, amount) method
+     * Desc: Checks if a buy order is exectuable
+     * Input: Search Term, amount of shares to buy
+     * Output: Boolean True/False 
+    */
     canPurchase(searchTerm, amount) {
-        //Check if User can purchase a searchTerm 
+        //Check if a buy order is executable 
         if (this.calculateCurrentPrice(searchTerm) * amount < (10/*TODO: USER MONEY VARIABLE*/)) {
             return true;
         } else {
             return false;
         }
     }
+
+    
 }
 
 
@@ -27,7 +35,13 @@ class DirectPriceCalculator {
     constructor() {
 
     }
-  
+
+    /*
+     * currentPrice(searchTerm) method
+     * Input: searchTerm
+     * Output: Price of a single share of searchTerm 
+     * Calculates price by taking volume over the last 24 hours
+    */
     currentPrice(searchTerm) {
         //Price of a search term is the volume over the last 24 hours
         var yesterday = new Date(Date.now() - 86400 * 1000).toISOString();
