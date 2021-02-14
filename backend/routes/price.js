@@ -1,5 +1,5 @@
 const express = require('express');
-const {DirectPriceCalculator} = require("../priceCalculator");
+const {DirectPriceCalculator} = require("../models/priceCalculator");
 const router = express.Router();
 
 const priceCalculator = new DirectPriceCalculator();
