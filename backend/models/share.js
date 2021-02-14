@@ -8,3 +8,5 @@ class Share {
     return this.priceCalculator.calculate(this.term);
   }
 }
+
+exports.Share = Share;
