@@ -1,42 +1,32 @@
+var WebmasterAPI = require('webmaster-api');
+WebmasterAPI.init("your API key");
+
+
+/*TODO: Create costBasis method, 
+        Percentage Inc/Dec method,
+        Decide what goes under PriceCalculator vs DirectPriceCalculator
+*/
 class PriceCalculator {
-    constructor(searchTerm) {
-        this.currentDate = new Date();
-        this.searchTerm = searchTerm;
-        this.volume = webMasterAPI(searchTerm, currentDate - 1, currentDate); //get volume data from yesterday to today
+    constructor() {
+
     }
 }
+
+
 
 class DirectPriceCalculator {
-    constructor(searchTerm) {
-        this.currentDate = new Date();
-        this.searchTerm = searchTerm;
-        this.volume = webMasterAPI(searchTerm, currentDate - 1, currentDate); //get volume data from yesterday to today, TODO: API PLACEHOLDER
+    constructor() {
+
     }
   
-    calculatePrice(searchTerm) {
-        return volume; 
+    calculateCurrentPrice(searchTerm) {
+        //Price of a search term is the volume over the last 24 hours
+        var yesterday = new Date(Date.now() - 86400 * 1000).toISOString();
+        var today = Date.now().toISOString();
+        return volume = webMasterAPI(searchTerm, yesterday, today); 
     }
-
-    // Accessors, Getters
-    get currentDate() {
-        return currentDate;
-    }
-
-    get searchTerm() {
-        return searchTerm;
-    }
-
-    get volume() {
-        return webMasterAPI(searchTerm, currentDate - 1, currentDate);
-    }
-
-    // Mutators, Setters
-    set currentDate(date) {
-        this.currentDate = date;
-    }
-
-    
 }
+
 
 exports.PriceCalculator = PriceCalculator
 exports.DirectPriceCalculator = DirectPriceCalculator
