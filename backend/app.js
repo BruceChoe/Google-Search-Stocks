@@ -6,9 +6,12 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const priceRouter = require('./routes/price')
+const priceRouter = require('./routes/price');
+const sqlite3 = require('sqlite3').verbose()
 
 const app = express();
+
+const db = new sqlite3.Database(':memory:')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
