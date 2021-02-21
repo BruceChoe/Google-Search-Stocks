@@ -4,9 +4,9 @@
 
 class inventory {
     constructor() {
-        this.money = 100000000;
+        this.balance = 100000000;
     }
-
+    
     addShare(searchTerm, amount) {
         if (stocks[searchTerm] === undefined) {
             stocks[searchTerm] = amount; 
@@ -16,8 +16,8 @@ class inventory {
     }
 
     removeShare(searchTerm, amount) {
-        if (stocks[searchTerm] === undefined) {
-            // If share does not exist, throw error code
+        if (stocks[searchTerm] === undefined) { 
+            // TODO: If share does not exist, throw error code
         } else if (amount > stocks[searchTerm]) {
              //TODO: If amount exceeds current amount of shares, throw error. 
         } else {
@@ -26,3 +26,5 @@ class inventory {
     }
 }
 
+let myInventory = new inventory();
+console.log(myInventory.money);
