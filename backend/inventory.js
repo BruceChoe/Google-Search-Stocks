@@ -18,14 +18,11 @@ class inventory {
     removeShare(searchTerm, amount) {
         if (stocks[searchTerm] === undefined) {
             // If share does not exist, throw error code
+        } else if (amount > stocks[searchTerm]) {
+             //TODO: If amount exceeds current amount of shares, throw error. 
         } else {
-            stocks[searchTerm] = stocks[searchTerm] - amount; //TODO: If amount exceeds current amount of shares, 
+            stocks[searchTerm] = stocks[searchTerm] - amount;
         }
     }
 }
 
-stocks = new Object();
-stocks["h"] = 1;
-console.log(stocks["h"]);
-stocks["h"] = stocks["h"] + 1;
-console.log(stocks["h"]);
