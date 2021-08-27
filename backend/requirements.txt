@@ -1,0 +1,3 @@
+# Install for a full development environment
+-r requirements/common.txt
+-r requirements/dev.txt
