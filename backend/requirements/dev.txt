@@ -1,0 +1,12 @@
+# Testing
+pytest
+pytest-bdd
+pytest-benchmark
+pytest-cov
+
+# Coding style, error detection, and formatting
+black
+flake8
+
+# Database
+psycopg2-binary

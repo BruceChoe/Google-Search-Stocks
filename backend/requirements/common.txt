@@ -1,0 +1,6 @@
+# Frameworks
+fastapi[all]
+
+# Database
+sqlalchemy
+psycopg2
